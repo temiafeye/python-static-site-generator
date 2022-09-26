@@ -1,5 +1,5 @@
 import typer
-from ssg import site
+from ssg import Site
 
 
 def main(source="content", dest="dist"):
@@ -9,8 +9,7 @@ def main(source="content", dest="dist"):
         "dest":dest
     }
 
-    site = site.Site(**config)
-    site.build()
+    Site(**config).build()
 
 if __name__ == "__main__":
     typer.run(main)
