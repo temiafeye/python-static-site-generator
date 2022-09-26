@@ -1,6 +1,6 @@
-from genericpath import exists
+
 from pathlib import Path
-import os
+
 
 
 class Site:
@@ -19,7 +19,7 @@ class Site:
         self.des.mkdir(parents=True, exist_ok=True)
 
         for path in self.source.rglob("*"):
-            if os.path.exists(path):
+            if path.is_dir():
                 self.create_dir(path)
 
     
